@@ -34,4 +34,4 @@ group by movieid
 ON r.movieId = g.movieId;
 
 -- выгрузка таблицы в файл
-psql -U postgres -h localhost -p 5433 -c "\\copy (SELECT * FROM movie.top_rating_with_keywords LIMIT 100) TO 'data_management/data_store/raw_data/top_rating_with_keywords.csv' WITH CSV HEADER DELIMITER as 'E';"
+psql -U postgres -h localhost -p 5433 -c "\\copy (SELECT * FROM movie.top_rating_with_keywords LIMIT 100) TO 'data_management/data_store/raw_data/top_rating_with_keywords.csv' WITH CSV HEADER DELIMITER as E'\t';"
